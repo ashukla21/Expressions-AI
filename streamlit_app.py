@@ -18,7 +18,7 @@ TL_GAN_HASH_FUNCS = {
 }
 
 def calc_main():
-    st.title("Nimbus Mien")
+    st.title("Expressions AI")
     st.sidebar.header("Input Options") 
     
     # Download all data files if they aren't already in the working directory.
