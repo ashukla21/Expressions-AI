@@ -4,7 +4,6 @@ import time
 import numpy as np
 import sklearn.linear_model as linear_model
 
-
 def find_feature_axis(z, y, method='linear', **kwargs_model):
     """
     function to find axis in the latent space that is predictive of feature vectors
