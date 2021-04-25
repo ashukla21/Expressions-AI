@@ -20,10 +20,7 @@ TL_GAN_HASH_FUNCS = {
 def calc_main():
     st.title("Nimbus Mien")
     st.sidebar.header("Input Options") 
-    """This demo demonstrates  using [Nvidia's Progressive Growing of GANs](https://research.nvidia.com/publication/2017-10_Progressive-Growing-of) and 
-    Shaobo Guan's [Transparent Latent-space GAN method](https://blog.insightdatascience.com/generating-custom-photo-realistic-faces-using-ai-d170b1b59255) 
-    for tuning the output face's characteristics. For more information, check out the tutorial on [Towards Data Science](https://towardsdatascience.com/building-machine-learning-apps-with-streamlit-667cef3ff509)."""
-
+    
     # Download all data files if they aren't already in the working directory.
     for filename in EXTERNAL_DEPENDENCIES.keys():
         download_file(filename)
@@ -163,7 +160,6 @@ def get_random_features(feature_names, seed):
     return features
 
 # Hash the TensorFlow session, the pg-GAN model, and the TL-GAN model by id
-# to avoid expensive or illegal computations.
 @st.cache(show_spinner=False, hash_funcs=TL_GAN_HASH_FUNCS)
 def generate_image(session, pg_gan_model, tl_gan_model, features, feature_names):
     """
